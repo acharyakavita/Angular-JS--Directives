@@ -19,3 +19,5 @@ Starter code for [Udacity](https://www.udacity.com)'s [Front End Frameworks cour
 ## View the app
 
 * In the terminal, run `grunt serve`. If you run into issues with this command, make sure that Grunt's command line interface is installed on your machine (`npm install -g grunt-cli`), then try again.
+
+*Execute index.html
