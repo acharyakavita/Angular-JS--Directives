@@ -1,0 +1,24 @@
+<!--Use of Controller directives :-the below code template displays the colors , sizes available for each color,
+price and quantity of each size with the data dynamically loaded from the controller legoStore.The add and remove buttons
+also alters the quantity on clicking them-->
+<div ng-controller="legoStore as lego">
+
+    <h1 id="storeHeading">{{lego.name}}</h1>
+    <p id="brickColors">Number of brick colors offered:{{lego.brickColors.length}}</p>
+
+    <ul  id="colorList">
+        <li  class="row" id="color-{{color}}" ng-repeat="(color,details ) in lego.bricks">{{color}}
+        <ul>       
+            <li class="col-sm-3 well brick-{{size}}" ng-repeat="(size,info) in details" 
+            ng-class="{'low-stock': info.quantity < 10,'coming-soon': info.quantity < 5}" >
+                <p class="size">size:{{size}}</p>
+                <p class="quantity">Quantity:{{info.quantity}}</p>
+                <p class="price">price:{{info.price}}</p>
+                <button class="buyButton" ng-click="lego.buy(color,size)">Buy</button>
+                <button class="returnButton" ng-click="lego.return(color,size)">Return</button>
+            </li>
+        </ul>
+    </li>   
+    </ul>
+</div>
+
